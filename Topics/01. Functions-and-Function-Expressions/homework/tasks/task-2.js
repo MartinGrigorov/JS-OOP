@@ -8,11 +8,8 @@
 
 function solve(numbers) {
     return function findPrimes(a, b) {
-        if (numbers.length === 0) {
-            throw 'Error';
-        }
-        if (!Array.isArray(numbers)) {
-            throw 'Error';
+        if (arguments.length < 2 || isNaN(+ a) || isNaN(+ b)) {
+            throw Error;
         }
     }
 }
