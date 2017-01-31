@@ -6,11 +6,34 @@
 		3) it must throw an Error if any of the range params is missing
 */
 
-function solve(numbers) {
-    return function findPrimes(a, b) {
-        if (arguments.length < 2 || isNaN(+ a) || isNaN(+ b)) {
+function solve() {
+    return function findPrimes(j, k) {
+        if(arguments.length < 2 || isNaN(+j) || isNaN(+k)){
             throw Error;
         }
+        let result = [];
+        for (let i = j; i <= k; i++) {
+            if(i === 2 || i === 3){
+                result.push(i);
+            }
+            else if(i > 1){
+                isItPrime(i);
+            }
+            else{
+                throw new Error ('number is equal to 1,to 0 or negative');
+            }
+        }
+        function isItPrime(n) {
+            let q = parseInt(Math.sqrt(n));
+            for (let i = 2; i <= q; i++) {
+                if(n % i === 0){
+                    return;
+                }
+            }
+            return result.push(n);
+        }
+        return result;
+
     }
 }
 
