@@ -6,9 +6,15 @@
 		3) it must throw an Error if any of the range params is missing
 */
 
-function solve() {
-	return function findPrimes() {
-	}
+function solve(numbers) {
+    return function findPrimes(a, b) {
+        if (numbers.length === 0) {
+            throw 'Error';
+        }
+        if (!Array.isArray(numbers)) {
+            throw 'Error';
+        }
+    }
 }
 
 module.exports = solve;
